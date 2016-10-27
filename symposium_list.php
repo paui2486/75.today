@@ -655,21 +655,21 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
             
             <div class="row">
                 
-                <div class="span3" >
+                <!--<div class="span3" >
                    <h4 align="left"><img src="images/wine_icon5.png" width="30" height="30"> 最新奇聞 </h4>
                    <div class="span3 hot_article" id="hot_article">
                    <?php do{ ?>
                     <div class="span3 each_hot_article" >
                         <a href="/article.php?n_id=<?php echo $row_newest_article['n_id']; ?>">
-                        <img src="http://admin.iwine.com.tw/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" class="span1" style="margin: 0 10px 0 10px;">
+                        <img src="http://75.today/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" class="span1" style="margin: 0 10px 0 10px;">
                         </a>
                         <a href="/article.php?n_id=<?php echo $row_newest_article['n_id']; ?>" style="margin-top:10px;">
-                        <?php echo mb_substr($row_newest_article['n_title'],0,25,"UTF-8"); ?><!---->
+                        <?php echo mb_substr($row_newest_article['n_title'],0,25,"UTF-8"); ?>
                         </a>
                     </div>
                    <?php } while ($row_newest_article = mysql_fetch_assoc($newest_article));?>
                     </div>
-                </div>
+                </div>-->
 				<!--<div class="span3" align="center">
                    <h4 align="left"><img src="images/wine_icon4.png" width="30" height="30"> iWine 排行榜 </h4>
                     <?php include('ad_1.php'); ?>
