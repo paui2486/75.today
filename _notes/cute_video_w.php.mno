@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8" ?><info>	<infoitem key="UD_article" value="name:n_id;datatype:int,name:n_title;datatype:string,name:n_date;datatype:date,name:n_cont;datatype:blob,name:n_fig1;datatype:string,name:n_order;datatype:int,name:n_video;datatype:blob,name:n_status;datatype:string" /></info>

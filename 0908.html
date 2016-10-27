@@ -1,0 +1,65 @@
+<Html> 
+<Head> 
+<!-- 頁面標題--> 
+<Title></Title> 
+
+<!-- 繁體中文Meta標籤--> 
+<meta http-equiv="Content-Language" content="zh-tw"> 
+<meta http-equiv="Content-Type" content="text/html; charset=big5"> 
+</Head> 
+
+<!-- 當本頁面一載入之後立即呼叫DetectImg()函式 --> 
+<Body onload="DetectImg()" BgColor="#FFFFFF"> 
+
+
+<Table CellSpacing="0" CellPadding="0" Width="200px" Border=1> 
+<Tr> 
+<Td><Img Src="https://scontent-tpe1-1.cdninstagram.com/t51.2885-15/e35/14128682_924999250938160_1472911702_n.jpg" Width="150" Height="150"></Td> 
+<Td> 
+<!-- 注意本張圖片並不存在喔!! --> 
+<Img Src="xxx.jpg" Width="150" Height="150"> 
+</Td> 
+<Td><Img Src="https://scontent-tpe1-1.cdninstagram.com/t51.2885-15/e35/14294717_1829204990634757_417061976_n.jpg" Width="150" Height="150"></Td>  
+</Tr> 
+</Table> 
+<Br> 
+
+
+<Script Language="Javascript"> 
+<!-- 
+function DetectImg() 
+{ 
+//---------------------------------------------------------- 
+//圖片載入錯誤處理 
+//---------------------------------------------------------- 
+var Imgs=document.getElementsByTagName("IMG") 
+
+for(var i=0;i<Imgs.length;i++) 
+{ 
+var oImg=Imgs[i] 
+var iState=oImg.readyState 
+//alert(oImg.readyState) 
+
+//---------------------------------------------------------- 
+//利用img.readyState屬性,來判斷圖片是否有成功載入 
+//---------------------------------------------------------- 
+//img.readyState='uninitialized' 圖片載入錯誤 
+//img.readyState='complete' 圖片載入成功載入完畢 
+if(iState=="uninitialized") 
+{ 
+//----------------------------------------------- 
+//圖片載入錯誤 
+//----------------------------------------------- 
+oImg.src="NoExists.jpg" 
+} 
+else 
+{ 
+//----------------------------------------------- 
+//圖片載入成功 
+//----------------------------------------------- 
+
+} 
+} 
+} 
+--> 
+</Script>

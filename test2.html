@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+<script src="ckeditor/ckeditor.js"></script>
+<script src="ckfinder/ckfinder.js"></script>
+ <script>
+   function processData(){
+   // getting data
+   var data = CKEDITOR.instances.content.getData()
+   alert(data);
+  }
+ </script> 
+</head>
+<body>
+
+<form name = 'form' action = 'test.php' method='post'>
+
+   <textarea name="content" id="content" rows="10" cols="80"></textarea>
+<script>
+
+	CKEDITOR.replace( 'content', {
+	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+	});
+</script>          
+
+
+
+<input type = 'button' value = '送出' onclick = 'processData()'>
+</form>
+
+</body>
+</html>
