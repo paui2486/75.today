@@ -113,7 +113,7 @@ $totalRows_hot = mysql_num_rows($hot);
   
   <head>
     <meta charset="utf-8">
-    <title> 75.today 今日奇文 攔轎上稿</title>
+    <title> 75.today 今日奇文 讀者上稿</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -128,7 +128,7 @@ $totalRows_hot = mysql_num_rows($hot);
     <![endif]-->
     <!-- Le fav and touch icons -->
     
-    <link rel="shortcut icon" href="assets/ico/123.ico">
+    <!--<link rel="shortcut icon" href="assets/ico/123.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -204,7 +204,7 @@ $totalRows_hot = mysql_num_rows($hot);
             
               <div>
                 <form action="<?php echo $editFormAction;?>" method="post" enctype="multipart/form-data" class="form-horizontal" id="form1" >
-                    <img src="images/wine_icon1.png" width="35" height="35"><span class="title">攔轎上稿</span><img src="images/line03.png" width="1000">
+                    <img src="images/wine_icon1.png" width="35" height="35"><span class="title">讀者上稿</span><img src="images/line03.png" width="1000">
                     <span class="span8"></span>
 
                     <div class="hero-unit02" style="border:solid 0px #000000; margin-bottom:5px; padding:5px; background-image:url(images/bg2.png)"><span class="hero-unit02" style="border: solid 0px #000000; margin-bottom: 5px; padding: 5px; background-image: url(images/bg2.png); color: #FF0000;">(*號為必填欄位)</span><br>

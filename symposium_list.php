@@ -144,7 +144,7 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
       </script>
     <![endif]-->
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/123.ico">
+    <!--<link rel="shortcut icon" href="assets/ico/123.ico">-->
     <!--<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
@@ -200,13 +200,13 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
                     <div>
                         <ul class="breadcrumb">
                             <li><a href="index.php">首頁</a> <!--<span class="divider">/</span></li>-->
-                            <!--<li class="active">攔轎上稿</li>-->
+                            <!--<li class="active">讀者上稿</li>-->
                         </ul>
                         <div class="row">
                         <div class="span9">
                             <div class="title_uploadimg">
-                                <div style="float:left;"><h3><img src="images/wine_icon1.png" width="35" height="35">攔轎上稿</h3></div>
-                                <div style="float:right; right:0px; top:0px; padding-top:20px;"><a href="symposium_upload_simple.php" onclick="alert('請先登入會員，謝謝！');"><input type="button" value="攔轎上稿" onclick="location.href='http://75.today/symposium_upload_simple.php'"></a></div>
+                                <div style="float:left;"><h3><img src="images/wine_icon1.png" width="35" height="35">讀者上稿</h3></div>
+                                <div style="float:right; right:0px; top:0px; padding-top:20px;"><a href="symposium_upload_simple.php" onclick="alert('請先登入會員，謝謝！');"><input type="button" value="讀者上稿" onclick="location.href='http://75.today/symposium_upload_simple.php'"></a></div>
                             </div>
                       
                             <img src="images/line03.png" width="1200">

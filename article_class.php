@@ -378,7 +378,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
         ?>
 
 <div class="span3">
-<h4 align="left"><img src="images/wine_icon5.png" width="30" height="30"> <a href ="http://75.today/symposium_list.php">攔轎上稿 </a></h4>
+<h4 align="left"><img src="images/wine_icon5.png" width="30" height="30"> <a href ="http://75.today/web/symposium_list.php">讀者上稿 </a></h4>
 <div class="span3 hot_article" id="hot_article">
 <?php do{ ?>
 <div  > <!-- 小心class 的影響 -->

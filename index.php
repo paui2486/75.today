@@ -196,7 +196,7 @@ z-index:2;
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php 
-$x = 1;
+$x = 6;
 function emjoi($x){
 	if($x == "1"){
 		$x = "靠.svg";
@@ -213,10 +213,10 @@ function emjoi($x){
 	}elseif($x == "5"){
 		$x = "幹.svg";
 		return $x;
-	}
-	
-	
+	}else{}
 				}
+				
+$switchX = 1;
 
 ?>
 
@@ -343,7 +343,9 @@ function emjoi($x){
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> </div>
+            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> 
+			<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+			</div>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>"><?php echo $row_hotest_expert['n_title']; ?></a><br>
                 </h5>
@@ -368,8 +370,10 @@ function emjoi($x){
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> </div>
-            <div style="height:50px; overflow:hidden">
+            <div id="Z1" style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> 
+			<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+			</div>
+			<div style="height:50px; overflow:hidden">
               <h5><a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>"><?php echo $row_hotest_article['n_title']; ?></a><br>
                 </h5>
             </div>
@@ -404,7 +408,7 @@ function emjoi($x){
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
             <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_expert['n_fig1']; ?>" alt="<?php echo $row_newest_expert['n_title']; ?>"> </a> 
-            <?php  echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); ?>
+            <?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
 			</div>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>"><?php echo $row_newest_expert['n_title']; ?></a><br>
@@ -440,7 +444,7 @@ function emjoi($x){
         <a href="article.php?n_id=<?php echo $row_newest_article['n_id']; ?>" >
         <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" alt="<?php echo $row_newest_article['n_title']; ?>">
         </a>
-		<?php  echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); ?>
+		<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
         </div>
 		
         <div style="height:50px; overflow:hidden">

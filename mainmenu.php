@@ -124,7 +124,7 @@ div.cities {
         </li>
         <li class="divider-vertical"></li-->
         <li>
-          <a href="symposium_list.php">攔轎上稿</a>
+          <a href="symposium_list.php">讀者上稿</a>
         </li>
         <!--<li class="divider-vertical"></li>-->
         <!--
