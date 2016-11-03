@@ -175,14 +175,9 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <style>
-#Z1 {
-position:relative;top:-1px;
-z-index:1;
-}
-#Z2 {
-position:absolute;top:12px;right:8px;
-z-index:2;	
-}
+	h1 {
+    background-image:url(<?php echo("webimages/xz4.jpg")?>);height:145px;
+	}
     </style>
    
   </head>
@@ -195,30 +190,7 @@ z-index:2;
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<?php 
-$x = 1;
-function emjoi($x){
-	if($x == "1"){
-		$x = "靠.svg";
-		return $x;
-	}elseif($x == "2"){
-		$x = "瞎.svg";
-		return $x;
-	}elseif($x == "3"){
-		$x = "扯.svg";
-		return $x;
-	}elseif($x == "4"){
-		$x = "萌.svg";
-		return $x;
-	}elseif($x == "5"){
-		$x = "幹.svg";
-		return $x;
-	}
-	
-	
-				}
 
-?>
 
  <?php include('mainmenu.php'); ?>
           
@@ -343,7 +315,8 @@ function emjoi($x){
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> </div>
+            <!--<div style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> </div>-->
+            <?php //echo("<h1 style='height:145px; overflow:hidden'><img src='webimages/靠.svg' alt='靠' align='right'></h1>"); ?>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>"><?php echo $row_hotest_expert['n_title']; ?></a><br>
                 </h5>
@@ -368,8 +341,9 @@ function emjoi($x){
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> </div>
-            <div style="height:50px; overflow:hidden">
+            <!--<div style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> </div>-->
+            <?php //echo("<h1 style='height:145px; overflow:hidden'><img src='webimages/靠.svg' alt='靠' align='right'></h1>"); ?>
+			<div style="height:50px; overflow:hidden">
               <h5><a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>"><?php echo $row_hotest_article['n_title']; ?></a><br>
                 </h5>
             </div>
@@ -403,9 +377,8 @@ function emjoi($x){
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_expert['n_fig1']; ?>" alt="<?php echo $row_newest_expert['n_title']; ?>"> </a> 
-            <?php  echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); ?>
-			</div>
+            <div style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_expert['n_fig1']; ?>" alt="<?php echo $row_newest_expert['n_title']; ?>"><img src='webimages/靠.svg' alt='靠' align='right'> </a> </div>
+            <?php //echo("<h1 style='height:145px; overflow:hidden'><img src='webimages/靠.svg' alt='靠' align='right'></h1>"); ?>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>"><?php echo $row_newest_expert['n_title']; ?></a><br>
                 </h5>
@@ -436,13 +409,12 @@ function emjoi($x){
       <?php do { ?>    
         <div class="span3">
         <div style="border:solid 0px #000000; margin-bottom:5px; padding:5px">
-        <div id="Z1" style="height:145px; overflow:hidden">
+        <div style="height:145px; overflow:hidden">
         <a href="article.php?n_id=<?php echo $row_newest_article['n_id']; ?>" >
-        <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" alt="<?php echo $row_newest_article['n_title']; ?>">
+        <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" alt="<?php echo $row_newest_article['n_title']; ?>"><img src='webimages/靠.svg' alt='靠' align='right'>
         </a>
-		<?php  echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); ?>
         </div>
-		
+		<?php// echo("<h1 style='overflow:hidden'><img src='webimages/靠.svg' alt='靠' align='right'></h1>"); ?>
         <div style="height:50px; overflow:hidden">
           <h5><a href="article.php?n_id=<?php echo $row_newest_article['n_id']; ?>"><?php echo $row_newest_article['n_title']; ?></a></br>  
           </h5>

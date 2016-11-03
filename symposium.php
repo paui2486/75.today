@@ -208,7 +208,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>

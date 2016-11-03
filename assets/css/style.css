@@ -41,7 +41,9 @@ h7{
 	font-size: 14px;
 	font-family: inherit;
 }
-
+sex {
+    background-image:url(<?php echo("webimages/xz6.jpg")?>);width:300px;height:200px;
+	}
 
 .page-header {
   border-bottom: 1pxpx solid #eeeeee;

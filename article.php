@@ -281,7 +281,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=486129248130860&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>
@@ -324,11 +324,11 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                     <?php echo $row_article['n_cont']; ?>
                     </div>
 					
-					<div ><!--地圖>店名>電話 開始 風格保存class="article_txt" style="margin-top:20px; margin-bottom:50px"-->
+					<!--<div ><!--地圖>店名>電話 開始 風格保存class="article_txt" style="margin-top:20px; margin-bottom:50px"-->
 					<??>
-						<a href="https://maps.google.com?daddr={{ <?php echo $row_article['n_address']; ?> }}" target="_blank"><!-- 偷吃步 -->
-						<div class="dashboard-block">
-							<img src="../images/where05.jpg" width="125" height="125">
+						<!--<a href="https://maps.google.com?daddr={{ <?php echo $row_article['n_address']; ?> }}" target="_blank"><!-- 偷吃步 -->
+						<!--<div class="dashboard-block">
+							<img src="../web/images/where05.jpg" width="125" height="125">
 							<div class="dashboard-text">
 							<p><?php echo $row_article['n_address']; ?></p>
 							
@@ -348,7 +348,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
 					
 					<br>&nbsp;<br>
 					若分享內容有侵害您的圖片版權，請來信留言告知，我們會及時加上版權信息，若是您反對使用，<br>
-					本著對版權人尊重的原則，會儘速移除相關內容 。 聯絡信箱：<a href ="mailto:service@iwine.com.tw">service@iwine.com.tw</a><!--超連結自動開起信箱-->
+					本著對版權人尊重的原則，會儘速移除相關內容 。 聯絡信箱：<a href ="mailto:service@75.today">service@75.today</a><!--超連結自動開起信箱-->
 					<br>&nbsp;<br>
 					
 					</div>
@@ -387,7 +387,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                       <?php do { ?>
                       <div class="span3">
                         <div style="border:solid 0px #000000; margin-bottom:20px;">
-                          <div style="height:199px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_other['n_id']; ?>" > <img src="http://admin.iwine.com.tw/webimages/article/<?php echo $row_other['n_fig1']; ?>" alt="<?php echo $row_other['n_title']; ?>" > </a> </div>
+                          <div style="height:199px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_other['n_id']; ?>" > <img src="http://75.today/admin/webimages/article/<?php echo $row_other['n_fig1']; ?>" alt="<?php echo $row_other['n_title']; ?>" > </a> </div>
                           <div style="height:30px">
                             <h5><a href="article.php?n_id=<?php echo $row_other['n_id']; ?>"><?php echo $row_other['n_title']; ?></a></h5>
                             <img src="images/article_line.png"> </div>
@@ -400,7 +400,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
 
 <div class="span8" style="padding:0px">
       <h4>&nbsp;</h4>
-<?php include('ad_content_bottom.php'); ?> 
+<?php// include('ad_content_bottom.php'); ?> 
       <h4>&nbsp;</h4>
 </div>
          
@@ -428,16 +428,16 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
         <div class="row">
         <!--<div class="span3" align="center"  id="hot_position">
            <h4 align="left"><img src="images/wine_icon4.png" width="30" height="30"> iWine 排行榜 </h4>
-            <?php include('ad_1.php'); ?>
+            <?php// include('ad_1.php'); ?>
         </div>-->
         
                 
-        <div class="span3" >
+        <!--<div class="span3" >
 <h4 align="left"><img src="images/wine_icon5.png" width="30" height="30"> <a href ="http://iwine.com.tw/symposium_list.php">攔轎上稿 </a></h4>
 <div class="span3 hot_article" id="hot_article">
 <?php do{ ?>
 <div  > <!-- 小心class 的影響 -->
-					
+<!--					
 <table>						
 						<?php while($symposium = mysql_fetch_assoc($symposium_query)) {
                                             $week=Array("日","一","二","三","四","五","六");
@@ -452,16 +452,16 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                                                <tr class="symposium_table" valign="top">
                                                <!--<td class="passed_item"><img src="images/icon_note_expired.png" style="max-width:100%"></td>-->
                                                
-                                                 <td class="passed_item"><?php echo $symposium['title']; ?> <!--a href="symposium.php?id=<?php //echo $symposium['id']; ?>">詳情</a--></td>
-                                                 <td class="passed_item">
+                                                <!-- <td class="passed_item"><?php echo $symposium['title']; ?> <!--a href="symposium.php?id=<?php //echo $symposium['id']; ?>">詳情</a--></td>
+                                                <!-- <td class="passed_item">
                                                     <?php  echo $display_date." ".$display_week; ?>
                                                  </td>
                                                  <td class="passed_item"><?php echo $symposium['area']; ?></td>
                                                  <!--td align="left" class="passed_item"><?php //echo $symposium['address']; ?></td-->
-                                                 <td class="passed_item">已截止</td>
+                                                <!-- <td class="passed_item">已截止</td>
                                                </tr>
                                            <?php }else{ ?><!-- 上面是活動時間已截止 以下這邊是活動列表 $symposium['id']活動ID $symposium['title']活動名稱-->
-                                                <tr class="symposium_table"  valign="top">
+                                                <!--<tr class="symposium_table"  valign="top">
 												
 												<td ><?php echo $display_date." ".$display_week; ?></td>
                                                 <td><a href="symposium.php?id=<?php echo  $symposium['id']; ?>" ><?php echo $symposium['area']; ?></a></td> 
@@ -470,18 +470,18 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                                                </tr>
                                            <?php }; ?>
                                        <?php }; ?>
-</table>						<!-- -->
+</table>						
                     </div>
                    <?php } while ($row_hot = mysql_fetch_assoc($hot));?>
                     </div>
-		</div>
+		</div> -->
         
         <!--div class="span3">
            <h4 align="left"><img src="images/wine_icon1.png" width="30" height="30"> 粉絲團最新動態</h4>
            <div class="fb-like-box" data-href="http://www.facebook.com/iwine" data-width="The pixel width of the plugin" data-height="350" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
         </div-->
         
-        <?php include('ad_content_right.php'); ?>
+        <?php //include('ad_content_right.php'); ?>
         
         
         
@@ -494,7 +494,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
       
       </div>
     </div>
-    <?php include('footer.php'); ?>
+    <?php //include('footer.php'); ?>
     <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script-->
     <script src="assets/js/bootstrap.js">

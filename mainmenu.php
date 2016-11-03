@@ -63,7 +63,7 @@ div.cities {
 <div class="navbar-black">
 
 <div class="container" style="padding-bottom:0px !important">
-<a class="brand" href="index.php"><img src="webimages/c.png"></a><!--原本  brand是title-->
+<a class="brand" href="index.php"><img src="webimages/c.svg"></a><!--原本  brand是title-->
 
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>

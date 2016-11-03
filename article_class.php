@@ -197,7 +197,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
       </script>
     <![endif]-->
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/123.ico">
+    <link rel="shortcut icon" href="assets/ico/d2.svg">
     <!--<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
@@ -215,7 +215,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>  
@@ -225,8 +225,8 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
             <div class="span9">
               <div>
                 <ul class="breadcrumb">
-  					<li><a href="index.php" class="home">首頁</a> <span class="divider">/</span></li>
-                    <li class="active" class="expert_h2"><?php echo $row_article_Class['pc_name']; ?></li>
+  					<li><a href="index.php" class="home">首頁</a> <!--<span class="divider">/</span>--></li>
+                    <!--<li class="active" class="expert_h2"><?php echo $row_article_Class['pc_name']; ?></li>-->
 				</ul>
                 <div class="row">
            			<div class="span9">
@@ -263,7 +263,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
           <div style="color: #949494; height:20px" align="right"><?php echo $row_article['n_date']; ?></div>
           <div style="z-index: 9999; overflow:hidden; height:20px; margin-top:-20px !important;">
                 <div style="float:left; z-index: 999;">
-                    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/article.php?n_id=<?php echo $row_article['n_id']; ?>'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/facebook-icon.png"></a>
+                    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/article.php?n_id=<?php echo $row_article['n_id']; ?>'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/FB.svg"></a>
                 </div>
                 <div style="float:left;padding-left:5px; z-index: 999; color:#949494;">
                     <?php echo number_format($row_article['view_counter']); ?> 人次點閱

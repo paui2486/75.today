@@ -188,7 +188,7 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>
@@ -199,8 +199,8 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
                 <div class="span9">
                     <div>
                         <ul class="breadcrumb">
-                            <li><a href="index.php">首頁</a> <span class="divider">/</span></li>
-                            <li class="active">攔轎上稿</li>
+                            <li><a href="index.php">首頁</a> <!--<span class="divider">/</span></li>-->
+                            <!--<li class="active">攔轎上稿</li>-->
                         </ul>
                         <div class="row">
                         <div class="span9">
@@ -243,7 +243,7 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
     
 	<!--fb SHARE START -->
 	<div style="float:left; z-index: 999;"><!--fb分享--><!--注意分享網址 資料庫欄位-->
-        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/symposium_list.php'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fb.png"></a>
+        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/symposium_list.php'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fbicon.svg"></a>
     </div>
 
 	<!--fb SHARE END -->
@@ -561,7 +561,7 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
     
 	<!--fb SHARE START -->
 	<div style="float:left; z-index: 999;"><!--fb分享--><!--注意分享網址 資料庫欄位-->
-        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/symposium_list.php'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fb.png"></a>
+        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/symposium_list.php'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fbicon.svg"></a>
     </div>
 
 	<!--fb SHARE END -->

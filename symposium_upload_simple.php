@@ -58,8 +58,8 @@ if (isset($_POST["check_form"])) {
     <html xmlns=\"http://www.w3.org/1999/xhtml\">
     <head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><title></title></head>
     <body>Hi <br>會員".$_SESSION['MEM_NAME']."(".$_SESSION['MEM_ACCOUNT'].")已經新增奇聞 「<b> ".$title." </b>」。<br><br>
-    前台顯示請見：<a href=\"http://www.iwine.com.tw/symposium.php?id=$_new_id\">http://www.iwine.com.tw/symposium.php?id=$_new_id</a><br>
-    <br>後台修改：<a href=\"http://admin.iwine.com.tw/qpzm105/symposium_s.php?id=$_new_id\">http://admin.iwine.com.tw/qpzm105/symposium_s.php?id=$_new_id</a>
+    前台顯示請見：<a href=\"http://www.75.today/web/symposium.php?id=$_new_id\">http://www.75.today/web/symposium.php?id=$_new_id</a><br>
+    <br>後台修改：<a href=\"http://www.75.today/admin/qpzm105/symposium_s.php?id=$_new_id\">http://www.75.today/admin/qpzm105/symposium_s.php?id=$_new_id</a>
     。</body></html>";
 	
 $mail->IsSMTP(); // telling the class to use SMTP
@@ -80,7 +80,7 @@ $mail->Username   = "service@iwine.com.tw"; // SMTP account username
 $mail->Password   = "service53118909";        // SMTP account password
 
     $mail->AddReplyTo("service@iwine.com.tw","iWine");
-    $mail->SetFrom('service@iwine.com.tw',"iWine");
+    $mail->SetFrom('service@75.today',"iWine");
     // $address = "iwantmywine@gmail.com";
     // $address = "draqyang@coevo.com.tw";
     
@@ -193,7 +193,7 @@ $totalRows_hot = mysql_num_rows($hot);
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>
@@ -328,7 +328,7 @@ $totalRows_hot = mysql_num_rows($hot);
            <?php do{ ?>
             <div class="span3 each_hot_article" >
                 <a href="/article.php?n_id=<?php echo $row_hot['n_id']; ?>">
-                <img src="http://admin.iwine.com.tw/webimages/article/<?php echo $row_hot['n_fig1']; ?>" class="span1" style="margin: 0 10px 0 10px;">
+                <img src="http://75.today/admin/webimages/article/<?php echo $row_hot['n_fig1']; ?>" class="span1" style="margin: 0 10px 0 10px;">
                 </a>
                 <a href="/article.php?n_id=<?php echo $row_hot['n_id']; ?>" style="margin-top:10px;">
                 <?php echo $row_hot['n_title']; ?>

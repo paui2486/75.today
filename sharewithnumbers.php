@@ -30,7 +30,7 @@
         <!-- G+ share js-end -->
     
 	<div style="float:left; z-index: 999;"><!--fb分享-->
-    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://www.iwine.com.tw/article.php?n_id=<?php echo $row_article['n_id']; ?>'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fb.png"></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://75.today/web/article.php?n_id=<?php echo $row_article['n_id']; ?>'),'facebook-share-dialog','width=626,height=436');return false;"><img src="images/fbicon.svg"></a>
     </div>
 	<!---->
 
@@ -62,7 +62,7 @@
 //do something with this information
     if( $iPhone || $Android){ ?>
                 <div style="float:left; padding-left:10px;">
-                <a href="http://line.naver.jp/R/msg/text/?<? echo $row_article['title']; ?>：<?php echo $row_article['title'] ?>%0D%0A<?php echo $cur_url; ?>"><img src="images/line.png"></a>
+                <a href="http://line.naver.jp/R/msg/text/? 75.today：<?php echo $row_article['n_title'] ?>%0D%0A<?php echo $cur_url; ?>"><img src="images/line.png"></a>
                 </div>
     <?php } ?> 
         <!-- current page fb like-end -->
