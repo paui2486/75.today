@@ -4,7 +4,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title> iWine -- 禁止酒駕．未滿18歲禁止飲酒</title>
+    <title> 75.today 奇聞共賞 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -19,7 +19,7 @@
     <![endif]-->
     <!-- Le fav and touch icons -->
     
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="assets/ico/j5.svg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -28,6 +28,7 @@
     </style>
   </head>
   <body>
+  <?php include_once("analyticstracking.php") ?>
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -36,7 +37,7 @@
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>
@@ -55,7 +56,7 @@
     					<label class="control-label" for="mem_id">帳 號</label>
     					<div class="controls">
       					<input type="text" id="mem_id" name="mem_id" placeholder="請輸入e-mail">
-                        <span class="help-inline">首次參加 iWine 或參加活動投稿的朋友，請先<a href="regist.php">註冊成為新會員</a>。</span>
+                        <span class="help-inline"> <a href="regist.php">註冊成為新會員</a>。</span>
     					</div>
 				</div>
   					<div class="control-group">
@@ -87,12 +88,12 @@
           
         </div>
         <div class="span3" id="LeftContent" align="center">
-        <?php include('ad_1.php'); ?>
+        <?php //include('ad_1.php'); ?>
         </div>
       </div>
       
     </div>
-    <?php include('footer.php'); ?>
+    <?php// include('footer.php'); ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script>
     <script src="assets/js/bootstrap.js">

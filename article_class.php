@@ -175,7 +175,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   
   <head>
     <meta charset="utf-8">
-    <title><?php echo $row_article_Class['pc_name']; ?>75.today 今日奇聞 </title>
+    <title><?php echo $row_article_Class['pc_name']; ?> ˙75今日奇聞 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo $row_article_Class['pc_description'];?>">
     <meta name="keyword" content="<?php echo $row_article_Class['pc_keyword'];?>">
@@ -197,7 +197,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
       </script>
     <![endif]-->
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/d2.svg">
+    <link rel="shortcut icon" href="assets/ico/j5.svg">
     <!--<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
@@ -207,6 +207,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     </style>
   </head>
   <body>
+  <?php include_once("analyticstracking.php") ?>
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -251,12 +252,12 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
         <?php //if($_GET['pc_id'] == 2){ ?> <!-- </div> --><?php //} ?>
        
           <h4><div style="height:30px">
-            <h7><a href="article.php?n_id=<?php echo $row_article['n_id']; ?>"><?php echo $row_article['n_title']; ?></a>
+            <a href="article.php?n_id=<?php echo $row_article['n_id']; ?>"><?php echo $row_article['n_title']; ?></a>
    <div style="background-image:url(images/article_line.png); height:8px;">
 
   </div>
             
-            </h7>
+            
           </div></h4>
           
           <div style="padding-right:5px; height:60px; line-height:20px;"><?php echo substr_utf8(strip_tags($row_article['n_cont']),35) ;?>...</div>

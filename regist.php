@@ -144,7 +144,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   
   <head>
     <meta charset="utf-8">
-    <title> iWine -- 禁止酒駕．未滿18歲禁止飲酒</title>
+    <title> ˙75今日奇聞 註冊頁</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -159,7 +159,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     <![endif]-->
     <!-- Le fav and touch icons -->
     
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="assets/ico/j5.svg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -168,6 +168,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     </style>
   </head>
   <body>
+  <?php include_once("analyticstracking.php") ?>
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -176,7 +177,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=540353706035158";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <?php include('mainmenu_20140903.php'); ?>
+    <?php include('mainmenu.php'); ?>
           
     <div class="container">
 	<?php include('header_20140903.php'); ?>
@@ -191,7 +192,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                     <img src="images/line03.png" width="1000">
                     <span class="span8"></span>
 
-                    <div class="hero-unit02" style="border:solid 0px #000000; margin-bottom:5px; padding:5px; background-image:url(images/bg2.png)"> <span class="massage">馬上加入iWine &nbsp;&nbsp;我們一起去旅行吧!
+                    <div class="hero-unit02" style="border:solid 0px #000000; margin-bottom:5px; padding:5px; background-image:url(images/bg2.png)"> <span class="massage">馬上加入75today &nbsp;&nbsp;
                     </span><br>
                     </div>
                     </p>
@@ -314,7 +315,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   					
                     <div class="control-group">
     					<div class="controls">
-                        <label class="checkbox">
+                        <!--<label class="checkbox">
         					<input type="checkbox" id="m_edm" name="m_edm"> 
         					我願意接受來自iWine的各項優惠訊息
       					</label>
@@ -323,7 +324,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
                         </label>
                         <label class="checkbox">
         					<input name="m_a18" type="checkbox" id="m_a18" value="Y" /> 我已經年滿18歲。
-                        </label>
+                        </label>-->
       					<input name="check_form" type="hidden" value="Y">
       					<button type="button" class="btn btn-danger" onClick="chkform();">確定註冊</button>
                         <button type="reset" class="btn btn-success">重設</button>
@@ -340,74 +341,11 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
           
         </div>
         
-        <div class="row">
-        <!--div class="span3" align="center">
-     	   <h4 align="left"><img src="images/wine_icon1.png" width="30" height="30">熱門排行</h4>
-        	<?php include('ad_1.php'); ?>
-        </div>
-        <div class="span3">
-     	   <h4 align="left"><img src="images/wine_icon1.png" width="30" height="30"> 粉絲團最新動態</h4>
-           <div class="fb-like-box" data-href="http://www.facebook.com/iwine" data-width="The pixel width of the plugin" data-height="350" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-        </div-->
-        <div class="span3" align="center">
-           <h4 align="left"><img src="images/wine_icon4.png" width="30" height="30"> iWine 排行榜 </h4>
-            <?php include('ad_1.php'); ?>
-        </div>
-        <?php
-        mysql_select_db($database_iwine, $iwine);
-        $query_hot = "SELECT * FROM article WHERE n_hot = 'Y' AND n_status= 'Y' AND n_title <> '' ORDER BY RAND() LIMIT 10";
-        $hot = mysql_query($query_hot, $iwine) or die(mysql_error());
-        $row_hot = mysql_fetch_assoc($hot);
-        $totalRows_hot = mysql_num_rows($hot);
-        ?>
-<div class="span3" >
-<h4 align="left"><img src="images/wine_icon5.png" width="30" height="30"> 品酒活動 </h4>
-<div class="span3 hot_article" id="hot_article">
-<?php do{ ?>
-<div  > <!-- 小心class 的影響 -->
-					
-<table>						
-						<?php while($symposium = mysql_fetch_assoc($symposium_query)) {
-                                            $week=Array("日","一","二","三","四","五","六");
-                                            $date_time=$symposium['start_date'];
-                                            list($date)=explode(" ", $date_time); //取出日期部份
-                                            list($Y,$M,$D)=explode("-",$date); //分離出年月日以便製作時戳
-                                            $display_date = $M."/".$D;
-                                            $display_week = "(".$week[date("w", mktime(0,0,0,$M,$D,$Y))].")";
-                                            $now = date( "Y-m-d H:i:s", mktime());
-                                            
-                                            if( strtotime($now) > strtotime($date_time) ){ ?>
-                                               <tr class="symposium_table" valign="top">
-                                               <!--<td class="passed_item"><img src="images/icon_note_expired.png" style="max-width:100%"></td>-->
-                                               
-                                                 <td class="passed_item"><?php echo $symposium['title']; ?> <!--a href="symposium.php?id=<?php //echo $symposium['id']; ?>">詳情</a--></td>
-                                                 <td class="passed_item">
-                                                    <?php  echo $display_date." ".$display_week; ?>
-                                                 </td>
-                                                 <td class="passed_item"><?php echo $symposium['area']; ?></td>
-                                                 <!--td align="left" class="passed_item"><?php //echo $symposium['address']; ?></td-->
-                                                 <td class="passed_item">已截止</td>
-                                               </tr>
-                                           <?php }else{ ?><!-- 上面是活動時間已截止 以下這邊是活動列表 $symposium['id']活動ID $symposium['title']活動名稱-->
-                                                <tr class="symposium_table"  valign="top">
-												
-												<td ><?php echo $display_date." ".$display_week; ?></td>
-                                                 
-												<td><a href="symposium.php?id=<?php echo  $symposium['id']; ?>" ><?php echo $symposium['title']; ?></a></td>
-												
-                                               </tr>
-                                           <?php }; ?>
-                                       <?php }; ?>
-</table>						<!-- -->
-                    </div>
-                   <?php } while ($row_hot = mysql_fetch_assoc($hot));?>
-                    </div>
-					</div>
-     </div>
+        
       </div>
 
     </div>
-    <?php include('footer.php'); ?>
+    <?php// include('footer.php'); ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script>
     <script src="assets/js/bootstrap.js">
@@ -445,8 +383,8 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   if( $("#m_passwd_confirm").val() != $("#m_passwd").val() ){alert('密碼確認不一致，請重新輸入!'); return; }
   if( $("#m_name").val() == ""){alert('請輸入姓名!'); return; }  
   if( $("#m_mobile").val() =="" || !$("#m_mobile").val().match(mobileReg)){alert('請輸入正確之手機號碼！'); return; }
-  if( $("input[name='m_agree']:checked").val() !="Y"){alert('您必須閱讀並勾選同意iWine所聲明之使用者條款才能完成註冊!'); return; }
-  if( $("input[name='m_a18']:checked").val() !="Y"){alert('您必須年滿18歲才能完成註冊!'); return; }
+  //if( $("input[name='m_agree']:checked").val() !="Y"){alert('您必須閱讀並勾選同意iWine所聲明之使用者條款才能完成註冊!'); return; }
+  //if( $("input[name='m_a18']:checked").val() !="Y"){alert('您必須年滿18歲才能完成註冊!'); return; }
   
   if(window.confirm('是否確定送出資料並完成註冊？')){
   $("#form1").submit();

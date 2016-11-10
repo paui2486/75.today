@@ -31,20 +31,16 @@ $_today = date('Y-m-d H:i:s');
 
 if (isset($_POST["check_form"])) {
   $title = $_POST['title'];
-  $insertSQL = sprintf("INSERT INTO symposium (enrollment, area, title, start_date, pic1, contain_html, creator, create_time, contacter, contact_email, contact_phone,active )
-                                               VALUES ('%s', '%s', '%s', '%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
-                       GetSQLValueString($_POST['enrollment'], "text"),
-                       GetSQLValueString($_POST['county'], "text"),
-                       GetSQLValueString($title, "text"),
-                       GetSQLValueString($_POST['start_date'], "date"),
+  $insertSQL = sprintf("INSERT INTO ROTD (title, pic1, contain_html, contacter, contact_email, contact_phone)
+                                               VALUES ('%s', '%s', '%s', '%s','%s', '%s')",
+                       GetSQLValueString($_POST['title'], "text"),
                        GetSQLValueString($_POST['pic1'], "text"),
                        GetSQLValueString($_POST['contain_html'], "text"),
-                       GetSQLValueString($_SESSION['MEM_ID'], "int"),
-                       GetSQLValueString($_today, "date"),
+                       //GetSQLValueString($_SESSION['MEM_ID'], "int"),
+                       
                        GetSQLValueString($_POST['contacter'], "text"),
                        GetSQLValueString($_POST['contact_email'], "text"),
-                       GetSQLValueString($_POST['contact_phone'], "text"),
-                       GetSQLValueString(1, "int"));
+                       GetSQLValueString($_POST['contact_phone'], "text"));
                        // echo "insertSQL = <font color=red>".$insertSQL."</font><br>";
 
   mysql_select_db($database_iwine, $iwine);
@@ -163,26 +159,8 @@ $totalRows_hot = mysql_num_rows($hot);
    <script src="js/twzipcode-1.4.1.js"></script>
     <script src="js/twzipcode-1.4.1.js"></script>
     
-    <script type='text/javascript'>
-     $(document).ready(function(){
-        $("select[name='district']").hide();
-        $("input[name='zipcode']").hide();
-        $("#send_out").click(function(){
-            var err = 0;
-            if($('#county').find(":selected").val()==""){ $("#area_help").html(" * 請選擇區域"); err=5; $('#county').focus(); }
-            if($('#title').val()==""){ $("#title_help").html(" * 請填標題"); err=1; $('#title').focus(); }
-            if($('#contacter').val()==""){ $("#contacter_help").html(" * 請填聯絡人"); err=1; $('#contacter').focus(); }
-            if($('#contact_email').val()==""){ $("#contact_email_help").html(" * 請填聯絡信箱"); err=1; $('#contact_email').focus(); }
-            if($('#contact_phone').val()==""){ $("#contact_phone_help").html(" * 請填連絡電話"); err=1; $('#contact_phone').focus(); }
-            //if($('textarea#contain_html').val()==""){ err=1; }
-            if($('#pic1').val()==""){ $("#pic1_help").html(" * 請至少上傳一張圖片"); err=15; $('#pic1').focus(); }
-            if($('#enrollment').val()==""){ $("#enrollment_help").html(" * 請填寫報名資訊"); err=14; $('#enrollment').focus(); }
-            if(err > 0){ alert("請提供完整資料，謝謝！"); return false; }
-        });
-        $('#title').change(function(){ if($('#title').val()!=""){$("#title_help").html("");} });
-        $('#fee').change(function(){ if($('#fee').val()!=""){$("#fee_help").html("");} });
-     });
-    </script>
+
+	
   </head>
   <body>
   <div id="fb-root"></div>
@@ -216,46 +194,7 @@ $totalRows_hot = mysql_num_rows($hot);
                           <input name="title" type="text" id="title"><span class="memo" id="title_help">*前台輸出 最多顯示40個字元</span>
                     </div>
                   </div>
-                    
-                    <div class="control-group">
-                      <label class="control-label" for="start_date">活動日期 </label>
-                        <div class="controls">
-                            <input name="start_date" type="text" id="start_date" placeholder="選擇開始時間">
-                            <div class="memo" id="date_help"></div>
-                        </div>
-                    </div>
-                     <script language="JavaScript">
-        //$(document).ready(function(){
-          var myDate = new Date();
-          var displayDate = myDate.getFullYear()+'-'+(myDate.getMonth()+1) + '-01 00:00:00';
-          var opt1={dateFormat: 'yy-mm-dd',
-                    showSecond: false,
-                    timeFormat: 'HH:mm:ss',
-                    addSliderAccess:true,
-                    sliderAccessArgs:{touchonly:false},
-                    showButtonPanel: true,
-                    defaultValue: displayDate
-                    };
-            $('#start_date').datetimepicker(opt1);
-            $('#end_date').datetimepicker(opt1);
-            $('#order_deadline').datetimepicker(opt1);
-        //});
-    </script>
-                    <div class="control-group">
-                        <label class="control-label" for="area"><span class="memo">*</span>地點</label>
-                        <div class="controls">
-                            <div id="twzip"></div>
-                        <script language="javascript">
-	//twzip
-	$('#twzip').twzipcode({
-		css: ['addr-county', ]	
-	});
-	</script>
-                          
-                        </select><span class="memo" id="area_help"></span>
-                        </div>   
-                    </div>
-                    
+ 
                    <div class="control-group">
                     <label class="control-label" for="contacter"><span class="memo">*</span>聯絡人</label>
                         <div class="controls">
@@ -274,18 +213,13 @@ $totalRows_hot = mysql_num_rows($hot);
                           <input name="contact_phone" type="text" id="contact_phone"><span class="memo" id="contact_phone_help"></span>
                     </div>
                   </div>
-  <!--<div class="control-group">
-    <label class="control-label" for="enrollment"><span class="memo">*</span>報名資訊</label>
-    <div class="controls">
-      <textarea name="enrollment" id="enrollment" cols="60" rows="3" class="form-control"></textarea><span class="memo" id="enrollment_help"></span>
-    </div>
-  </div>-->
+
         <div class="control-group">
                         <label class="control-label" for="pic1"><span class="memo">*</span>上傳封面照片</label>
                         <div class="controls">
                             <div class="memo" id="description_help"> 請上傳 2MB 以下之圖片</div>
                           <img class="upload_preview" src="temp_upload_icon.jpg" alt="圖片預覽" name="showImg1" id="showImg1" onClick='javascript:alert("圖片預覽");'>
-                          <input name="Submit_pic1" type="button" onClick="window.open('fupload_custom.php?useForm=form1&amp;prevImg=showImg1&amp;upUrl=/webimages/symposium&amp;ImgS=&amp;ImgW=&amp;ImgH=&amp;reItem=pic1','fileUpload','width=500,height=300')" value="準備上傳">
+                          <input name="Submit_pic1" type="button" onClick="window.open('fupload.php?useForm=form1&amp;prevImg=showImg1&amp;upUrl=./webimages&amp;ImgS=&amp;ImgW=&amp;ImgH=&amp;reItem=pic1','fileUpload','width=500,height=300')" value="準備上傳">
                           <input name="pic1" type="hidden" id="pic1" size="4"><span class="memo" id="pic1_help"></span>
                         </div>
                     </div>

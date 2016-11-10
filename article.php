@@ -160,7 +160,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   
   <head>
     <meta charset="utf-8">
-    <title><?php echo $row_article['n_title']; ?> 75.today 今日奇聞 奇文共賞</title>
+    <title><?php echo $row_article['n_title']; ?> ˙75今日奇聞</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo substr_utf8(strip_tags($row_article['n_description']),200) ;?>...">
     <meta name="keyword" content="<?php echo substr_utf8(strip_tags($row_article['n_keyword']),200) ;?>...">
@@ -183,7 +183,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     <![endif]-->
     <!-- Le fav and touch icons -->
     
-    <!--<link rel="shortcut icon" href="assets/ico/123.ico">-->
+    <link rel="shortcut icon" href="assets/ico/j5.svg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -240,7 +240,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     </script>
   </head>
   <body>
-  
+  <?php include_once("analyticstracking.php") ?>
   <div class="draqtest">
       draq 測試專區<br>
       x: <span id="display_x">display_x</span><br>
@@ -347,8 +347,8 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
 					<div style="font-size:130% !important; margin-bottom:20px;">
 					
 					<br>&nbsp;<br>
-					若分享內容有侵害您的圖片版權，請來信留言告知，我們會及時加上版權信息，若是您反對使用，<br>
-					本著對版權人尊重的原則，會儘速移除相關內容 。 聯絡信箱：<a href ="mailto:service@75.today">service@75.today</a><!--超連結自動開起信箱-->
+					創作來自 讀者投稿 若分享內容有侵害您的圖片版權與相關權利，請來信留言告知，<br>我們會及時加上版權信息，若是您反對使用，
+					本著對版權人尊重的原則，會儘速移除相關內容 。 <br>聯絡信箱：<a href ="mailto:service@75.today">service@75.today</a><!--超連結自動開起信箱-->
 					<br>&nbsp;<br>
 					
 					</div>

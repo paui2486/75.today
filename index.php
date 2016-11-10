@@ -28,11 +28,7 @@ $newest_article = mysql_query($query_newest_article, $iwine) or die(mysql_error(
 $row_newest_article = mysql_fetch_assoc($newest_article);
 $totalRows_newest_article = mysql_num_rows($newest_article);
 
-mysql_select_db($database_iwine, $iwine);//最新專家
-$query_newest_expert = "SELECT * FROM expert_article WHERE n_id > 130 and n_status = 'Y' ORDER BY n_id DESC LIMIT 0";
-$newest_expert = mysql_query($query_newest_expert, $iwine) or die(mysql_error());
-$row_newest_expert = mysql_fetch_assoc($newest_expert);
-$totalRows_newest_expert = mysql_num_rows($newest_expert);
+
 
 mysql_select_db($database_iwine, $iwine);//最熱文章
 $query_hotest_article = "SELECT * FROM article WHERE n_status = 'Y' AND n_hot ='Y' ORDER BY RAND() LIMIT 12";
@@ -41,11 +37,13 @@ $row_hotest_article = mysql_fetch_assoc($hotest_article);
 $totalRows_hotest_article = mysql_num_rows($hotest_article);
 
 
+////
 mysql_select_db($database_iwine, $iwine);//最熱專家
 $query_hotest_expert = "SELECT * FROM expert_article WHERE n_id > 130 and n_status = 'Y' AND n_hot ='Y' ORDER BY RAND() LIMIT 0";
 $hotest_expert = mysql_query($query_hotest_expert, $iwine) or die(mysql_error());
 $row_hotest_expert = mysql_fetch_assoc($hotest_expert);
 $totalRows_hotest_expert = mysql_num_rows($hotest_expert);
+////
 
 mysql_select_db($database_iwine, $iwine);//banner 所需要的前置資料
 $query_index_fig = "SELECT * FROM index_fig WHERE b_status = 'Y' ORDER BY b_order ASC";
@@ -144,7 +142,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
   
   <head>
     <meta charset="utf-8">
-    <title>75.today 奇聞共賞 </title>
+    <title>˙75今日奇聞 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="ldciUWlDvibIj3ny2qU9ioxmEedndTTM-rsVUpx2K1I" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +167,7 @@ $queryString_symposium = sprintf("&totalRows_symposium=%d%s", $totalRows_symposi
     <![endif]-->
     <!-- Le fav and touch icons -->
     
-    <link rel="shortcut icon" href="assets/ico/d2.svg">
+    <link rel="shortcut icon" href="assets/ico/j5.svg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -180,13 +178,14 @@ position:relative;top:-1px;
 z-index:1;
 }
 #Z2 {
-position:absolute;top:12px;right:8px;
+position:absolute;top:15px;right:17px;
 z-index:2;	
 }
     </style>
    
   </head>
   <body>
+  <?php include_once("analyticstracking.php") ?>
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -196,7 +195,8 @@ z-index:2;
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php 
-$x = 6;
+
+
 function emjoi($x){
 	if($x == "1"){
 		$x = "靠.svg";
@@ -216,7 +216,7 @@ function emjoi($x){
 	}else{}
 				}
 				
-$switchX = 1;
+
 
 ?>
 
@@ -238,7 +238,7 @@ $switchX = 1;
                     <!--<div class="carousel-inner">
                         <?php $i=1; ?>
                         <?php do { ?>
-                        <div class="<?php if($i==1){ ?>active <?php } ?>item"><a href="<?php echo $row_index_fig['b_url']; ?>"><img src="http://007.style/admin/webimages/index/<?php echo $row_index_fig['b_file']; ?>"></a>
+                        <div class="<?php if($i==1){ ?>active <?php } ?>item"><a href="<?php echo $row_index_fig['b_url']; ?>"><img src="http://75.today/admin/webimages/index/<?php echo $row_index_fig['b_file']; ?>"></a>
                             <?php if($row_index_fig['b_name'] <>""){ ?>
                             <div class="carousel-caption">                            
                               <h4><?php echo $row_index_fig['b_name']; ?></h4>
@@ -343,8 +343,8 @@ $switchX = 1;
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> 
-			<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>" > <img src="http://75.today/admin/webimages/article/<?php echo $row_hotest_expert['n_fig1']; ?>" alt="<?php echo $row_hotest_expert['n_title']; ?>"> </a> 
+			<?php if($x > 0){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
 			</div>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_hotest_expert['n_id']; ?>"><?php echo $row_hotest_expert['n_title']; ?></a><br>
@@ -370,8 +370,8 @@ $switchX = 1;
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div id="Z1" style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> 
-			<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+            <div id="Z1" style="height:145px; overflow:hidden"> <a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>" > <img src="http://75.today/admin/webimages/article/<?php echo $row_hotest_article['n_fig1']; ?>" alt="<?php echo $row_hotest_article['n_title']; ?>"> </a> 
+			<?php $x = $row_hotest_article['n_switchX']; if($x > 0){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
 			</div>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="article.php?n_id=<?php echo $row_hotest_article['n_id']; ?>"><?php echo $row_hotest_article['n_title']; ?></a><br>
@@ -407,8 +407,8 @@ $switchX = 1;
       <?php do { ?>
         <div class="span3">
           <div style="margin-bottom:5px; padding:5px;">
-            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>" > <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_expert['n_fig1']; ?>" alt="<?php echo $row_newest_expert['n_title']; ?>"> </a> 
-            <?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+            <div id="Z1" style="height:145px; overflow:hidden"> <a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>" > <img src="http://75.today/admin/webimages/article/<?php echo $row_newest_expert['n_fig1']; ?>" alt="<?php echo $row_newest_expert['n_title']; ?>"> </a> 
+            <?php if($x > 0){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
 			</div>
 			<div style="height:50px; overflow:hidden">
               <h5><a href="expert_article.php?n_id=<?php echo $row_newest_expert['n_id']; ?>"><?php echo $row_newest_expert['n_title']; ?></a><br>
@@ -442,9 +442,9 @@ $switchX = 1;
         <div style="border:solid 0px #000000; margin-bottom:5px; padding:5px">
         <div id="Z1" style="height:145px; overflow:hidden">
         <a href="article.php?n_id=<?php echo $row_newest_article['n_id']; ?>" >
-        <img src="http://007.style/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" alt="<?php echo $row_newest_article['n_title']; ?>">
+        <img src="http://75.today/admin/webimages/article/<?php echo $row_newest_article['n_fig1']; ?>" alt="<?php echo $row_newest_article['n_title']; ?>">
         </a>
-		<?php if($switchX >= 2){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
+		<?php $x = $row_newest_article['n_switchX']; if($x > 0){ echo('<div id="Z2"><img src="http://75.today/web/webimages/'.emjoi($x).'" alt="'.emjoi($x).'"></div>'); }else{ } ?>
         </div>
 		
         <div style="height:50px; overflow:hidden">

@@ -478,8 +478,8 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
                                        <tr align="left">
                                          <th width="55" >&nbsp;</th><!--background="images/bg2.png">-->
                                          <th width="232" >活動主題 </th><!--background="images/bg2.png"-->
-                                         <th width="93" >日期</th><!--background="images/bg2.png"-->
-                                         <th width="78" >區域</th><!--background="images/bg2.png"-->
+                                         <!--<th width="93" >日期</th><!--background="images/bg2.png"-->
+                                         <!--<th width="78" >區域</th><!--background="images/bg2.png"-->
                                          <!--th width="236" background="images/bg2.png">地址</th-->
                                          <th width="53" > 報名狀態</th><!--background="images/bg2.png"-->
                                        </tr>
@@ -492,35 +492,21 @@ $totalRows_newest_article = mysql_num_rows($newest_article);
                                             $display_week = "(".$week[date("w", mktime(0,0,0,$M,$D,$Y))].")";
                                             $now = date( "Y-m-d H:i:s", mktime());
                                             
-                                            if( strtotime($now) > strtotime($date_time) ){ ?>
-                                               <tr class="symposium_table" valign="top">
-                                               <td class="passed_item"><img src="images/icon_note_expired.png" style="max-width:100%"></td>
-                                               
-                                                 <td class="passed_item"><?php echo $symposium['title']; ?> <!--a href="symposium.php?id=<?php //echo $symposium['id']; ?>">詳情</a--></td>
-                                                 <td class="passed_item">
-                                                    <?php  echo $display_date." ".$display_week; ?>
-                                                 </td>
-                                                 <td class="passed_item"><?php echo $symposium['area']; ?></td>
-                                                 <!--td align="left" class="passed_item"><?php //echo $symposium['address']; ?></td-->
-                                                 <td class="passed_item">已截止</td>
-                                               </tr>
-                                           <?php }else{ ?><!-- 上面是活動時間已截止 以下這邊是活動列表 $symposium['id']活動ID $symposium['title']活動名稱-->
+                                            { ?><!-- 上面是活動時間已截止 以下這邊是活動列表 $symposium['id']活動ID $symposium['title']活動名稱-->
                                                 <tr class="symposium_table"  valign="top">
                                   
                                   <td><span class="passed_item"><img src="images/icon_note.jpg" style="max-width:100%"></span></td>
                                                      <td><a href="symposium.php?id=<?php echo $symposium['id']; ?>"><?php echo $symposium['title']; ?></a></td>
-                                                     <td>
-                                                        <?php echo $display_date." ".$display_week; ?>
-                                                     </td>
-                                                     <td><?php echo $symposium['area']; ?></td><!--活動地點-->
+                                                     
+                                                     <!--<td><?php echo $symposium['area']; ?></td><!--活動地點-->
                                                      <!--td align="left" ><?php //echo $symposium['address']; ?></td-->
-                                                     <td ><?php if($symposium['available']==0) {echo "<font color=#D0085B>已額滿</font>";} else {echo "歡迎報名";} ?></td><!--是否可以報名-->
+                                                     <!--<td ><?php if($symposium['available']==0) {echo "<font color=#D0085B>已額滿</font>";} else {echo "歡迎報名";} ?></td><!--是否可以報名-->
                                                </tr>
                                            <?php }; ?>
                                        
                                        <?php }; ?>
                                      </table>
-                                <?php }else{ echo " <TABLE><TR><TD STYLE='HEIGHT:100PX;'>暫無資訊，敬請期待！ </TD></TR></TABLE>"; } ?>
+                                <?php }else{ /*echo " <TABLE><TR><TD STYLE='HEIGHT:100PX;'>暫無資訊，敬請期待！ </TD></TR></TABLE>";*/ } ?>
                             </div>
 
         <!---品酒會列表結束-->         
